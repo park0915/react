@@ -29,7 +29,6 @@ class App extends Component {
             var data = this.state.contents[i];
             if(data.id === this.state.selected_content_id){
                 return data;
-               break;
             }
             i = i+1
         }
@@ -72,8 +71,8 @@ class App extends Component {
             }.bind(this)}>
             </CreateContent>;
         }else if (this.state.mode === "update"){
-           var _content = this.getReadContent();
-            _article = <UpdateContent data={_content} onSubmit={
+           var _content1 = this.getReadContent();
+            _article = <UpdateContent data={_content1} onSubmit={
                 function (_id,_title,_desc) {
                     var _contents = Array.from(this.state.contents);
                     var i = 0;
@@ -112,7 +111,8 @@ class App extends Component {
                             selected_content_id :Number(_id)
                         });
                     }.bind(this)} // 하위가 상위한테 명령 : 이벤트
-                    data={this.state.contents}> //상위가 하위한테 명령 : props
+                    //상위가 하위한테 명령 : props
+                    data={this.state.contents}>
                 </TOC>
                 <Control
                     onChangeMode={function (_mode) {

@@ -2,7 +2,6 @@ import React , {Component} from 'react';
 
 class CreateContent extends Component {
     render(){
-        var data = this.props.data;
         return(
             <article>
                 <h2>Create</h2>
